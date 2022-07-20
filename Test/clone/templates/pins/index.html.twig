@@ -1,0 +1,44 @@
+<!DOCTYPE>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Pinterest-clone</title>
+</head>
+<body>
+    <h1>All Pins</h1>
+
+    {#Pour faciliter le changement des page il est préférable d'utiliser la fonction twig path('nom_route_du_controller')#}
+
+    <a href=" {{path('app_pins_create')}}" target=""> Create Pin </a> 
+    
+    {# Pour afficher une variable venant du controller ici PinController doit utiliser la commande : {{<nom_de_la_variable>}} #}
+    
+    {#Pour voir tout les filtre de twig : https://twig.symfony.com/doc/3.x/filters/index.html #}
+    {#{%if pins|length > 0%}{#ici utilisation du filtre length#}
+    
+    {#Pour avoir plus d'information au sujet des commandes twig: https://twig.symfony.com/doc #}
+
+        {% for pin in pins %} {# Pour utilisation d'une logique on utilse {% %} sinon pour un appel de variable on tape {{}} #}
+            <article>
+                <h1> 
+                    {#
+                        Permet de récuperer le chemin vers le route qui va nous permettre de récupérer les valeurs et
+                        path admet comme d'autre argument ce qu'il doit transmettre comme variable si le chemin dépends d'un attribut spé
+                    #}
+                    <a href="{{ path('app_pin_show' , {id : pin.id} )}}"> {{ pin.getTitle() }} </a> 
+                </h1> {# On peut aussi utiliser les variables même des class ici pin.title et pin.description#}
+               
+                <p>{{ pin.getDescription() }}</p>{# Et twig s'occupera lui même d'appeler les getters et les setter et pas besoin des parentheses#}
+            </article>
+        {%else%} {#Il est possible d'utiliser un else dans un for ici il stipule que s'il n'y a pas de pin alors fait ce qui suit#}
+            <p>Sorry, None pins in our database</p>
+        {% endfor %}
+    
+    {#
+    {% else %}
+    
+        <p>Sorry, None pins in our database</p>
+    
+    {% endif %}
+    #}
+</body>
