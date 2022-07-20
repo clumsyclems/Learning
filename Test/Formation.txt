@@ -1,0 +1,59 @@
+Voir ce site afin de voir les bonnes pratique d'un developper d'application.
+
+
+Symfony fonctionne sur le modèle MVC :
+M -> Modèle (Admin) : source de données (database, fichier excel) ---> (Back)
+V -> Vue (Marketing) : présentation de l'application ---> (Front)
+C -> Controleur (CEO) : donne les directives  ---> (Link between Front and Back)
+
+Exemple : 
+    Get /login 
+    --> Controller du nom de "loginController" : loginController(Directive) est appelé 
+        --> demande à Vue d'afficher la page de connection
+        --> Vue affiche la page de connection 
+
+    Post /login
+    --> Controller du nom de "loginController" : loginController(Directive) est appelé 
+        --> Demande à Modèle s'il existe un utiliseur avec ce mot de passe
+            --> Modèle vérifie et renvoie sa réponse : ici on supose non
+        --> Controller reçoit la réponse et demande à vue d'afficher "mot de passe invalide"
+            --> Vue affiche mot de passe invalide
+
+Liaison avec une base de données :
+On peut le faire avec deux manières différentes:
+    - PDO
+        pins :
+            -title
+            -description
+            -createdAt
+            -updatedAt
+
+        Insert into pins ..... ou Delete ...
+
+    - ORM (Object Relational Mapper) souvent avec symfony on utilise Doctrine
+        
+        class Pin {
+            private $id;
+            private $title;
+            private $description;
+        }
+        $pin = new Pin;
+        $pin->setTitle('A title');
+        $pin->setDescription('A description');
+
+        Ensuite l'ORM va s'occuper de la requete sql ----> mappage automatique et si changement de base alors Doctrine va s'adapter.
+
+
+Les variables d'environnement : Se sont des variables créé au niveau du système d'exploitation et qui sont accessible via un code.
+
+Les parametres configurations permettent de pouvoir modifier des variables situer dans à plusieurs endroit dans le code en un seul lieu.
+    
+    Pour ce faire il est préférable sur le fichier "services.yaml" dans le dossier config
+    Si on veut ajouter des paramètres spécifiques au projet directement lié à l'application il est préférable d'utiliser le préfixe "app."
+
+Afin d'éviter des failles de sécurité toute les variables d'environnement sensible ou secretes doivent rester sur le poste de travail et donc 
+l'utilisation d'un fichier ".env.local" est necessaire. et ne sera pas commit. Elles le dessus sur les valeurs dans le fichier .env .
+
+Afin de mieux sécuriser et de facilité le voyage entre les pages du projet il est préférable d'utiliser les routes :
+
+
