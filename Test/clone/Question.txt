@@ -1,0 +1,31 @@
+1.
+    Sécurisation des compte avec md5 -> recommender d'utiliser une autre manières d'hasher un mot de passe
+    https://www.php.net/manual/en/function.md5.php
+    idem pour la fonction uniqid : https://www.php.net/manual/en/function.uniqid.php
+
+    *****************************A voir à la fin de la migration***********************************
+
+2. 
+    A quoi sert l'entrée roleclear dans la class User: Il existe déjà un attribut role et role_detail 
+    get qui renvoie une "role" unserializable 
+
+    *****************************A voir à la fin de la migration***********************************
+    
+
+3. 
+    role est vu comme un text. Or ce dernier contient plusieurs role (admin,reader,back,front ...)
+    Donc pour palier à ce probleme je l'ai passé pour un tableau -> changement de type d'information ou je travaillerais à adapter
+    les requetes pour pouvoir obtenir les mêmes sortie à la fin.
+
+4.  
+    Création énumeration / map / structure pour pouvoir avoir un seul endroit où stocker et gérer les différents roles que peuvent avoir les utilisateurs de l'app
+
+5.
+    Utiliter de la fonction "eraseCredentials" sinon je supprime.
+
+
+********************************************************************
+
+6.
+    classe CurrencyRate
+    amount est un string dans la classe mais est un décimal dans la bdd -> le passer en decimal dans la classe aussi ?
