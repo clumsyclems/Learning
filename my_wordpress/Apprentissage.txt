@@ -1,0 +1,212 @@
+                
+                
+                Création of a website with wordpress :
+
+
+- First and Foremost we must configure the website's parameters to work in the great condition : 
+
+    - In genereal parameters you can change the title oet the slgna of your website. It is better to have a better referencing by Google
+    and attract more people.
+
+    - You can also change some information about the general parameters :
+        - The site URL for the persons who like to change the domain name of their website,
+        - The Email address, the place where notice are sent, you can change this if it 's not the great email address,
+        - You can also allow the user to register on the website.
+        - You can create and add users roles and define a defaul role for new website members.
+
+    - In the Writing parameters, you can define the default category for of a new post and configure the emailbox to post by email address.
+
+    - In the Reading parameters, you can set up the homepage and the postpage so the visibility of the site (see or not during its creation)
+
+    - The Discussion section is to configure the post part of the blog.
+
+    - Finally, the Permalink section is to define and configure the referencing of the page one internet.
+
+
+- Now you can create your own homepage and navigation menu : 
+    - For this part, create an empty homepage with only a title and a description. and the Blog page with just a title
+
+    - The Navigation menu is create in another section on the main page of wordpress. In Appearance they have the section Menu.
+        There create a new menu with the name of your choice and define the type and where it can be appear.
+        At left you can select the page that can appear in the menu and with the drag and drop system organize the diagram.
+
+
+- This is the time to think about the website shape:
+    - At the beginning we need to define the objective of the site,
+    - After think about it referencing on internet and it is possible to use this page : https://neilpatel.com/ubersuggest/ to search the best keywords,
+    - Thus, characterize the website's tree,
+    - Finally, create wireframe to have a idea of each page.
+
+
+- We have a big idea about our website's shape, now we can start to design the homepage. But before start we need to choose the 
+    the theme and a page builder.
+    - A page builder is used to design our proper page with a drag and drop system. It is simple to use for person who don't want to touch on HTML/CSS/JS
+
+    - For the theme thay have 3 types: 
+        - Free: they have a lot of these but some of them are second-rate.
+        - Freemum: they are free but you have to paid to got option.
+        - Premium: You must to pay to have them on specific marckket place.
+    - They also 3 style of a  theme:
+        - Starter themes or frameworks which are empty and you can create your proper theme.
+        - Special theme orientate on type of theme especially blog.
+        - Multipurpose theme that can have their proper page builder but they are too heavy 
+            for that that page need and had some option that we don't especially need.
+
+    - For these elements the best pages builders are Elementor and Beaver Builder
+        and best theme are OceanWP and Astra.
+        
+        They have also other type of pages builders and themes and you can navigate on the net to search the best you want. 
+    
+    - The good way to choose the best theme is to pay attention about some things :
+        - The last update date:
+            less than 6 month the theme can not be supported.
+        
+        - The note and the comments can help to have an appreciation about the theme
+
+        - The fame of the theme, more it's download more the person appreciate the theme.
+            Nonetheless some theme which have a lot of notoriety came by overload and have more option that you need
+
+        - The charging speed: heavy theme can have a influence one the user experience.
+
+        - Multilanguage aspect, some theme can be translate and other not.
+
+        - The Support, search if the theme is have a good support to solve some problem you can meet.
+
+        - The source, it is better to get theme on fame site than pirate or hazardous website that can compromise your project.
+
+        - The  design, flexibility and fonctionnality quality. Take a theme too rigid can push you to touch some part of the code that you don't want to touch.
+
+
+- The theme is selected ( here OceanWP). Now we need to install it: 
+    - On the Theme Panel and go in Install demo and select the demo you want, an error can arrive if the wordpress is not the lastest version.
+    
+    - When you have installed the theme you have the possibility too get a demo page to gain time: 
+        -on the theme square, click on customize and follow the requirements 
+            to get the demo page (avoid the part to download the "Get extention" because they are premium).
+
+    - Finish the configuration with apply.
+
+
+- The theme choosen you need some services don't given by Wordpress, this is here where you need too get extension.
+    -The way to chose them is the same as the theme choice.
+
+
+- The theme and the extension ready you must have a graphic chart:
+    - Found the inspiration with a picture or a set of color.
+
+    - Choose the policy
+
+    - A visual master and a logo
+
+
+- Now we need to match up idea with the theme.
+    - First of all, you need to desactivate the default color nd policy in Elementor in the Elementor section click on Setting and check both box 
+        (disable color and disable policy by default)
+    
+    - To configure your logo, go on the customizer and in Header go in logo,chnage logo and upload a file
+        You can also add a logo in the footer with adding a image in the footer.
+    
+    - For the color go in setting and select Central Color Palette, check the ckeck boxes add your color and #333, and #fff to the font and typography of the text
+        to not have a big difference between the text color and the background.
+
+    - Changing the typography in the typography section and update that according your choices. 
+
+    - To the layout is manage by general setting.
+
+
+- The time is come to create his own homepage:
+    - here we gonna edit the page with the extension "Elementor" in the editor we have three part. 
+        the first on the left is use to show and select the element ( box ), the second is the navigator it allow to navigate in each element on the page 
+        and the last is the dynamic page which show the page create by the Elementor.
+    
+    - The using of this editor is funny and easy to understand so I don't pursue the explainations
+
+
+
+        Create Custom Block on Gutenberg :
+
+
+-At the beginning we need to choose the perfect theme where create custom blocks, here I choose the twenty nineteen theme to extends it.
+
+
+- In the folder directory of wordpress you can see the theme folder, in there take the twentynineteen folder and search the file "function.php"
+
+
+- In the IDE of your choice modify this files with comments and add the fucntion : function
+            "require get_template_directory() . '/inc/gutenberg.php';".
+    
+
+- Go in the inc folder and create this file.
+
+
+- Now we can try to change some of content in the theme editor:
+
+    - First and Foremost we can change the color palette. To do that in your new file create a function with name of your choice,
+        here I call it "new_color_palette", with empty parentheses and empty brackets, after the empty function you need to add this function
+        to the project so you type "add_action('init', '<name_of_your_function>');" 
+    
+    - Go on with a new color palette, in the function we requiere to announce which we gonna to change, here the color palette.
+        So we'll use the function "add_support_theme" and the first argument is the part of the theme we are going to change : "editor-color-palette".
+        The second attribut is the array of the new palette, with inside an array of each color with their name,slug and hexa definition color.
+
+    - Now we have done it, change the font size now. Take back the first instruction for a new font-size editor. As you may have guessed it,
+        the first function attribut is the name "editor-font-sizes" with an array of the list of each fon size you need. the array contain the
+        name, the slug and the size of the font.
+    
+    - To discover over theme support go on the Wordpress page: https://developer.wordpress.org/block-editor/how-to-guides/themes/theme-support/
+
+
+- The Easiest is done now come into the harder the creation custom block creation : 
+    
+    - In the js folder create the file where you gonna create the new block.
+
+    - In this file we'll use the only function requiered to create a custom block : "registerBlockType"
+
+    - The first argument of the function is the path to get the block, usually it compose like this "namespacce/block-name" 
+        and the second is all data you need to create the new block.
+    
+    - In the second argument you have four specific function type : 
+        - the built-in attributes -> all information we need at the creation of the block (name,description,icon,category),
+        - the custom attributes -> all attributes in your block,
+        - the custom function -> how the block react according the event,
+        - the built-in function -> edit and save -> use for the edition and the front page.
+
+    - It is the time for wordpress to get the new block, for this in the php file created before add a new function (here named "crodriguez_gutenberg_blocks")
+        and add the new block with "register_block_type("<the_path_in_the_block_def>",array('editor_script'=> 'custom-cta-js'));"
+    
+    - Refresh the project... Oh we forgot one thing the register_block_type library, 
+        go on the js file and add that with "const { registerBlockType } = wp.blocks;" at the top.
+
+    - Refresh another time and we'll see, ah the library does exist, we need to warn php that we use "wp.blocks" library
+        For that, we need to type in the array php file : "wp_register_script('custom-cta-js', get_template_directory_uri() . '/js/gutenberg-cta-block.js', 
+        array('wp-blocks'));" with this we ask to php to give the right library to the script we want.
+    
+    - And now the block created exists after refreshing the page.
+
+
+- After creating a new block it is better to put something inside.
+    
+    - It is really simple, in your js file you have the two build-in function edit and save , they are use to the visual of the block,
+        we are going to talk about the edit function, and save after. in edit you just return what you want to show in your screen.
+        we gonna to dod something enough simple, right a div with hello world : <div>Hello World</div>,
+
+    - Let's go to see this in the screen ... another error appear ! It is normal, to response at that problem you need to install some libraries with npm,
+        So type : "npm install --save-dev --save-exact @wordpress/scripts" in a terminam and this is finished,
+        then create a "src" folder and put you js file in and rename it "index.js", and create another folder "build",
+        to finish the configuration, go in the file "package.json" and add this line in build action : "build:scripts": "wp-scripts build".
+        Now all it's done to solve our problem you just need to go in the terminal and type : "npm run build:scripts"
+        That all your new block print "hello world" in wordpress !
+
+    - But our solution isn't suitable, each time we do a modification we need to type this command. To avoid this constraint we need to add another line
+        in package.json : "start-build": "wp-scripts start". And now when we need to work on this project you type just "npm run start-build" our
+        project is all the time updated when a modification is done.
+    
+
+- I known it's cool to create his own blocks and write something in the back but it's better if we can do it dynamically it the editor.
+
+    - To do it, you just need to go in your js script and modify somes things and add anothers. Now the object attributes has its significance.
+        Each arguments of this object can be see like a value where we store a information. So you type the name of your new value : "author"
+        after ":{}" and inside the brackets you give the type of your value. Here I give a "string" so you write "type: 'string';" in your new value
+
+    - But without the possibility to write inside the editor we can't store nothing. So we gonna to replace the div in the editor by a input. 
+    
